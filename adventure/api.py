@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-# from pusher import Pusher
+from django.views.decorators.csrf import csrf_exempt 
+from pusher import pusher
 from django.http import JsonResponse
 from decouple import config
 from django.contrib.auth.models import User
@@ -9,7 +9,13 @@ from rest_framework.decorators import api_view
 import json
 
 # instantiate pusher
-# pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
+channels_client = pusher.Pusher(
+  app_id='851543',
+  key='7ebdd8f48dea5a2b9254',
+  secret='28f576b1fa100d60ef60',
+  cluster='us3',
+  ssl=True
+)
 
 @csrf_exempt
 @api_view(["GET"])
