@@ -60,14 +60,14 @@ r_narrow.connectRooms(r_foyer, "w")
 r_narrow.connectRooms(r_treasure, "n")
 r_treasure.connectRooms(r_narrow, "s")
 
-r_overlook.connectRooms(r_bedroom, "w")
 r_bedroom.connectRooms(r_overlook,"e")
+r_overlook.connectRooms(r_bedroom, "w")
 
 r_bedroom.connectRooms(r_study, "n")
 r_study.connectRooms(r_bedroom, "s")
 
-r_study.connectRooms(r_office, "w")
 r_office.connectRooms(r_study, "e")
+r_study.connectRooms(r_office, "w")
 
 r_office.connectRooms(r_attic, "n")
 r_attic.connectRooms(r_office, "s")
