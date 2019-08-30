@@ -34,7 +34,7 @@ def rooms(request):
     result = []
     for room in rooms.values():
         result.append(room)
-    return JsonResponse({'rooms': result})
+    return JsonResponse({'rooms': result}, safe=True)
 
 # @csrf_exempt
 @api_view(["POST"])
